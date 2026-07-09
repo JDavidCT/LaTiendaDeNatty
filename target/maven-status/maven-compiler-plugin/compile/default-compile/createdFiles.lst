@@ -1,5 +1,9 @@
+ClienteServlet.class
+main\ClienteServlet.class
+modelo\Producto.class
 conexion\ConexionDB.class
 dao\UsuarioDAO.class
+dao\ProductoDAO.class
 main\Main.class
 modelo\Usuario.class
-main\ClienteServlet.class
+servlets\ProductoServlet.class
