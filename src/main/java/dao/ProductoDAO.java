@@ -17,7 +17,7 @@ public class ProductoDAO {
 
     // Método para insertar un producto
     public void insertar(Producto p) throws SQLException {
-        String sql = "INSERT INTO productos(nombre, descripcion, precio, stock, categoria) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO productos(nombre, `descripción`, precio, stock, categoria) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = ConexionDB.conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNombre());
@@ -42,9 +42,9 @@ public class ProductoDAO {
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Producto p = new Producto(
-                    rs.getInt("id"),
+                    rs.getInt("id_producto"),
                     rs.getString("nombre"),
-                    rs.getString("descripcion"),
+                    rs.getString("descripción"),
                     rs.getDouble("precio"),
                     rs.getInt("stock"),
                     rs.getString("categoria")
@@ -59,8 +59,8 @@ public class ProductoDAO {
     }
 
     // Método para actualizar un producto
-    public boolean actualizarProducto(Producto p) {
-        String sql = "UPDATE productos SET nombre=?, descripcion=?, precio=?, stock=?, categoria=? WHERE id=?";
+    public boolean actualizarProducto(Producto p) throws SQLException {
+        String sql = "UPDATE productos SET nombre=?, `descripción`=?, precio=?, stock=?, categoria=? WHERE id_producto=?";
         try (Connection conn = ConexionDB.conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNombre());
@@ -74,15 +74,12 @@ public class ProductoDAO {
                 System.out.println("✅ Producto actualizado correctamente.");
             }
             return filas > 0;
-        } catch (SQLException e) {
-            System.out.println("❌ Error al actualizar producto: " + e.getMessage());
-            return false;
         }
     }
 
     // Método para eliminar un producto
-    public boolean eliminarProducto(int id) {
-        String sql = "DELETE FROM productos WHERE id=?";
+    public boolean eliminarProducto(int id) throws SQLException {
+        String sql = "DELETE FROM productos WHERE id_producto=?";
         try (Connection conn = ConexionDB.conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -91,9 +88,6 @@ public class ProductoDAO {
                 System.out.println("✅ Producto eliminado correctamente.");
             }
             return filas > 0;
-        } catch (SQLException e) {
-            System.out.println("❌ Error al eliminar producto: " + e.getMessage());
-            return false;
         }
     }
 }

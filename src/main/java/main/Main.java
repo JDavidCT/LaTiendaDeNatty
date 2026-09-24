@@ -1,11 +1,13 @@
 package main;
 
+import java.sql.SQLException;
+
 import conexion.ConexionDB;
 import dao.UsuarioDAO;
 import modelo.Usuario;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // Conexión inicial
         ConexionDB.conectar();
 
