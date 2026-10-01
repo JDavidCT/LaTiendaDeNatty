@@ -19,13 +19,12 @@ public class UsuarioDAO {
 
         try { 
             conn = ConexionDB.conectar();
-            String sql = "INSERT INTO usuarios (id_usuarios, nombre, correo, password , puntos) VALUES (?, ?, ?, ?,?)";
+            String sql = "INSERT INTO usuarios (nombre, correo, password, puntos) VALUES (?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, usuario.getId());
-            stmt.setString(2, usuario.getNombre());
-            stmt.setString(3, usuario.getCorreo());
-            stmt.setString(4, usuario.getPassword());
-            stmt.setInt(5, usuario.getPuntos());
+            stmt.setString(1, usuario.getNombre());
+            stmt.setString(2, usuario.getCorreo());
+            stmt.setString(3, usuario.getPassword());
+            stmt.setInt(4, usuario.getPuntos());
 
             int filas = stmt.executeUpdate();
             if (filas > 0) {
@@ -55,7 +54,7 @@ public class UsuarioDAO {
                     
                     while (rs.next()) {
                         Usuario usuario = new Usuario(
-                            rs.getInt("id_usuarios"),
+                            rs.getInt("id_usuario"),
                             rs.getString("nombre"),
                             rs.getString("correo"),
                             rs.getString("password"),
@@ -70,7 +69,7 @@ public class UsuarioDAO {
             }
 
 public boolean actualizarUsuario(Usuario usuario) {
-    String sql = "UPDATE usuarios SET nombre=?, correo=?, password=?, puntos=? WHERE id_usuarios=?";
+    String sql = "UPDATE usuarios SET nombre=?, correo=?, password=?, puntos=? WHERE id_usuario=?";
     try (Connection conn = ConexionDB.conectar();
          PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -89,7 +88,7 @@ public boolean actualizarUsuario(Usuario usuario) {
 }
 
 public boolean eliminarUsuario(int id) {
-    String sql = "DELETE FROM usuarios WHERE id_usuarios=?";
+    String sql = "DELETE FROM usuarios WHERE id_usuario=?";
     try (Connection conn = ConexionDB.conectar();
          PreparedStatement stmt = conn.prepareStatement(sql)) {
 

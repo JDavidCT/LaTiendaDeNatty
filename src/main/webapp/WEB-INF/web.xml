@@ -1,17 +1,17 @@
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
-         version="5.0">
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
     <display-name>LaTienda-copia</display-name>
-    <servlet>
-        <servlet-name>ClienteServlet</servlet-name>
-        <servlet-class>main.ClienteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ClienteServlet</servlet-name>
-        <url-pattern>/ClienteServlet</url-pattern>
-    </servlet-mapping>
+    <request-character-encoding>UTF-8</request-character-encoding>
+    <response-character-encoding>UTF-8</response-character-encoding>
     <welcome-file-list>
-        <welcome-file>FormularioProducto.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+    <resource-ref>
+        <description>Datasource MySQL de La Tienda, definido en META-INF/context.xml</description>
+        <res-ref-name>jdbc/LaTiendaDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 </web-app>

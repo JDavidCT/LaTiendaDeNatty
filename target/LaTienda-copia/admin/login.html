@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="api-root" content="../">
+    <title>La Tienda de Natty | Administración</title>
+    <link rel="stylesheet" href="../assets/css/tienda.css">
+    <link rel="stylesheet" href="../css/modulos.css">
+</head>
+<body>
+    <main class="site-shell">
+        <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">N</span><span><span class="brand-name">La Tienda de Natty</span><span class="brand-tagline">Administración</span></span></a><a class="header-link" href="../index.html">Volver a la tienda</a></header>
+        <section class="form-panel login-panel">
+            <p class="eyebrow">Acceso restringido</p><h1 class="compact-title">Panel administrador</h1>
+            <p class="form-intro">Ingresa tus credenciales para gestionar el catálogo.</p>
+            <form class="form-grid" data-admin-login action="../api/admin/login" method="post">
+                <div class="field field-full"><label for="admin-user">Usuario</label><input id="admin-user" name="usuario" autocomplete="username" required></div>
+                <div class="field field-full"><label for="admin-password">Contraseña</label><input id="admin-password" name="contrasena" type="password" autocomplete="current-password" required></div>
+                <div class="field-full"><button class="button button-dark" type="submit">Iniciar sesión</button><p class="notice" data-login-status role="status"></p></div>
+            </form>
+        </section>
+    </main>
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

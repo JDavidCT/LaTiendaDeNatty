@@ -1,0 +1,17 @@
+<Context>
+    <Resource name="jdbc/LaTiendaDB"
+              auth="Container"
+              type="javax.sql.DataSource"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/latienda?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=America/Bogota&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"
+              username="root"
+              password=""
+              initialSize="2"
+              maxActive="20"
+              maxIdle="10"
+              minIdle="2"
+              maxWait="10000"
+              testOnBorrow="true"
+              validationQuery="SELECT 1" />
+</Context>

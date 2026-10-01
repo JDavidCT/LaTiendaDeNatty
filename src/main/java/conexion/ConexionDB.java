@@ -1,26 +1,19 @@
 package conexion;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import com.mysql.cj.jdbc.Driver;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 public class ConexionDB {
-    
- private static final String URL = "jdbc:mysql://localhost:3306/latienda?serverTimezone=America/Bogota";
- private static final String USER = "root"; 
- private static final String PASSWORD = "jdavidct2026";
-  
+    private static final String DATA_SOURCE_NAME = "java:comp/env/jdbc/LaTiendaDB";
+
     public static Connection conectar() throws SQLException {
         try {
-            DriverManager.registerDriver(new Driver());
-            Connection conexion = DriverManager.getConnection(URL, USER, PASSWORD);
-             System.out.println("✅ Conexión exitosa a LaTienda: ");
-            return conexion;
-        } catch (SQLException e) {
-            System.err.println("❌ Error al conectar a LaTienda: " + e.getMessage());
-            throw e;
+            DataSource dataSource = (DataSource) new InitialContext().lookup(DATA_SOURCE_NAME);
+            return dataSource.getConnection();
+        } catch (NamingException e) {
+            throw new SQLException("No se encontró el datasource JNDI " + DATA_SOURCE_NAME + ".", e);
         }
     }
-
 }

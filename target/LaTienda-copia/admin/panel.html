@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="api-root" content="../">
+    <title>La Tienda de Natty | Productos</title>
+    <link rel="stylesheet" href="../assets/css/tienda.css">
+    <link rel="stylesheet" href="../css/modulos.css">
+</head>
+<body data-page="admin">
+    <main class="site-shell">
+        <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">N</span><span><span class="brand-name">La Tienda de Natty</span><span class="brand-tagline">Gestión de productos</span></span></a><button class="header-link" type="button" data-admin-logout>Cerrar sesión</button></header>
+        <section class="content-width admin-workspace">
+            <div class="admin-heading"><div><p class="eyebrow">Inventario</p><h1 class="compact-title">Productos</h1></div><button class="button button-dark" type="button" data-new-product>Registrar producto</button></div>
+            <p class="notice" data-admin-status role="status"></p>
+            <form class="form-panel product-editor" data-product-form hidden>
+                <h2 data-editor-title>Registrar producto</h2>
+                <input type="hidden" name="id">
+                <div class="form-grid">
+                    <div class="field"><label for="product-name">Nombre</label><input id="product-name" name="nombre" required maxlength="100"></div>
+                    <div class="field"><label for="product-category">Categoría</label><input id="product-category" name="categoria" required maxlength="50"></div>
+                    <div class="field field-full"><label for="product-description">Descripción</label><textarea id="product-description" name="descripcion" required></textarea></div>
+                    <div class="field"><label for="product-price">Precio</label><input id="product-price" name="precio" type="number" min="0" step="0.01" required></div>
+                    <div class="field"><label for="product-stock">Stock</label><input id="product-stock" name="stock" type="number" min="0" step="1" required></div>
+                    <div class="field field-full"><label for="product-image">Foto del producto</label><input id="product-image" name="foto" type="file" accept="image/*" data-image-input><span class="file-help">La API debe guardar la imagen y devolver su URL.</span><img class="image-preview" data-image-preview alt="Vista previa del producto"></div>
+                </div>
+                <div class="form-actions"><button class="button button-dark" type="submit">Guardar producto</button><button class="button" type="button" data-cancel-edit>Cancelar</button></div>
+            </form>
+            <div class="admin-panel">
+                <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Foto</th><th>Nombre</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr></thead><tbody data-products-table></tbody></table></div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

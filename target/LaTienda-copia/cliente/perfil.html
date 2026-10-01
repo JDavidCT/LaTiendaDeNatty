@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="api-root" content="../">
+    <title>La Tienda de Natty | Mi cuenta</title>
+    <link rel="stylesheet" href="../assets/css/tienda.css">
+    <link rel="stylesheet" href="../css/modulos.css">
+</head>
+<body data-page="perfil">
+    <main class="site-shell"><header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">N</span><span><span class="brand-name">La Tienda de Natty</span><span class="brand-tagline">Mi cuenta</span></span></a><a class="header-link" href="../index.html">Volver a la tienda</a></header>
+        <section class="form-panel profile-panel"><p class="eyebrow">Tu espacio</p><h1 class="compact-title">Mi cuenta</h1>
+            <div class="account-tabs" role="tablist"><button class="button" type="button" data-account-tab="login">Iniciar sesión</button><button class="button" type="button" data-account-tab="register">Crear cuenta</button></div>
+            <form class="form-grid account-form" data-customer-login>
+                <div class="field field-full"><label for="customer-login-email">Correo</label><input id="customer-login-email" name="correo" type="email" autocomplete="email" required></div>
+                <div class="field field-full"><label for="customer-login-password">Contraseña</label><input id="customer-login-password" name="contrasena" type="password" autocomplete="current-password" required></div>
+                <div class="field-full"><button class="button button-dark" type="submit">Entrar</button></div>
+            </form>
+            <form class="form-grid account-form" data-customer-register hidden>
+                <div class="field field-full"><label for="customer-name">Nombre</label><input id="customer-name" name="nombre" autocomplete="name" required></div>
+                <div class="field field-full"><label for="customer-email">Correo</label><input id="customer-email" name="correo" type="email" autocomplete="email" required></div>
+                <div class="field field-full"><label for="customer-password">Contraseña</label><input id="customer-password" name="contrasena" type="password" autocomplete="new-password" minlength="8" required></div>
+                <div class="field-full"><button class="button button-dark" type="submit">Crear cuenta</button></div>
+            </form>
+            <div class="account-summary" data-account-summary hidden><h2>Hola, <span data-customer-name></span></h2><p class="points-total">Puntos acumulados: <strong data-customer-points>0</strong></p><p class="form-intro">Próximamente podrás canjear tus puntos por productos o descuentos.</p><button class="button" type="button" data-customer-logout>Cerrar sesión</button></div>
+            <p class="notice" data-account-status role="status"></p>
+        </section>
+    </main>
+    <script src="../js/api.js"></script><script src="../js/cliente.js"></script>
+</body>
+</html>

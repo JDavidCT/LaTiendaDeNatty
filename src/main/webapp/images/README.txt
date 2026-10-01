@@ -1,0 +1,1 @@
+Las fotos seleccionadas en el panel se envían a la API. El servidor debe guardarlas y devolver su URL para mostrarlas en el catálogo.

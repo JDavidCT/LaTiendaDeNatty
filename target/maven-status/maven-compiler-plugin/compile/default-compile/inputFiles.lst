@@ -5,4 +5,10 @@ C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\main\ClienteServlet.java
 C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\main\Main.java
 C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\modelo\Producto.java
 C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\modelo\Usuario.java
+C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\servlets\AdminAuthenticator.java
+C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\servlets\AdminAuthServlet.java
+C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\servlets\ClienteServlet.java
+C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\servlets\CompraServlet.java
+C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\servlets\JsonUtil.java
 C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\servlets\ProductoServlet.java
+C:\Users\DISEÑO\Desktop\LaTienda-copia\src\main\java\servlets\TokenAuth.java

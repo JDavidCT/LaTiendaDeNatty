@@ -10,6 +10,8 @@ public class Producto {
     private double precio;
     private int stock;
     private String categoria;
+    private byte[] foto;
+    private String fotoTipo;
 
     public Producto() {}
 
@@ -40,4 +42,10 @@ public class Producto {
 
     public String getCategoria() { return categoria; }
     public void setCategoria(String categoria) { this.categoria = categoria; }
+
+    public byte[] getFoto() { return foto; }
+    public void setFoto(byte[] foto) { this.foto = foto; }
+
+    public String getFotoTipo() { return fotoTipo; }
+    public void setFotoTipo(String fotoTipo) { this.fotoTipo = fotoTipo; }
 }

@@ -1,21 +1,22 @@
 package servlets;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
 import dao.ProductoDAO;
-import modelo.Producto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
+import modelo.Producto;
 
 /**
  * Servlet para gestionar productos de la tienda.
  * Maneja las operaciones de listado e inserción.
  */
-@WebServlet("/productos")
+@WebServlet("/legacy/productos")
 public class ProductoServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final ProductoDAO dao = new ProductoDAO();

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="api-root" content="">
+    <title>La Tienda de Natty | Inicio</title>
+    <link rel="stylesheet" href="assets/css/tienda.css">
+    <link rel="stylesheet" href="css/modulos.css">
+</head>
+<body data-page="cliente">
+    <main class="site-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html"><span class="brand-mark">N</span><span><span class="brand-name">La Tienda de Natty</span><span class="brand-tagline">Objetos para disfrutar</span></span></a>
+            <nav class="nav-actions" aria-label="Navegación principal">
+                <a class="header-link" href="#catalogo">Catálogo</a>
+                <button class="header-link" type="button" data-open-cart>Carrito <span data-cart-count>0</span></button>
+                <a class="header-link" href="cliente/perfil.html">Mi cuenta</a>
+            </nav>
+        </header>
+        <section class="content-width hero" aria-labelledby="inicio-titulo">
+            <div><p class="eyebrow">La colección de Natty</p><h1 id="inicio-titulo">Pequeñas cosas, grandes momentos.</h1><p class="lead">Encuentra piezas especiales para llenar tus espacios de calidez y personalidad.</p></div>
+            <p class="hero-note">Compra con calma. Cada producto merece un lugar especial en tu historia.</p>
+        </section>
+        <section class="content-width" id="catalogo" aria-labelledby="catalogo-titulo">
+            <div class="toolbar"><h2 id="catalogo-titulo">Nuestros productos</h2><input class="search" type="search" data-product-search placeholder="Buscar en la tienda..." aria-label="Buscar productos"></div>
+            <p class="notice" data-catalog-status role="status">Cargando productos...</p>
+            <div class="product-grid" data-product-grid></div>
+        </section>
+        <dialog class="store-dialog" data-cart-dialog aria-labelledby="cart-title">
+            <div class="dialog-heading"><h2 id="cart-title">Tu carrito</h2><button class="icon-button" type="button" data-close-cart aria-label="Cerrar carrito">×</button></div>
+            <div data-cart-items></div>
+            <p class="cart-total">Total <strong data-cart-total>$0</strong></p>
+            <button class="button button-dark" type="button" data-confirm-purchase>Confirmar compra</button>
+            <p class="notice" data-cart-status role="status"></p>
+        </dialog>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/cliente.js"></script>
+</body>
+</html>
